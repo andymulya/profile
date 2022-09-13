@@ -6,6 +6,7 @@
 html {
     height: 100%;
     background-color: cyan;
+    overflow-x: hidden;
 }
 
 body {
@@ -16,17 +17,22 @@ body {
     flex-direction: column;
     color: white;
     justify-content: space-between;
+    font-family: 'Kanit', sans-serif;
 }
 
 main{
 	display: flex;
 	flex-direction: row-reverse;
-	padding: 40px;
+	padding-right: 70px;
 	text-align: center;
 }
 
 aside{
 	flex: 30%;
+}
+
+aside article{
+	margin-left: 30%;
 }
 
 div.content{
@@ -40,7 +46,8 @@ div.content article{
 }
 
 div.content article h1{
-	font-size: 30px;
+	font-family: 'Combo', cursive;
+	font-size: 35px;
 	margin-bottom: 30px;
 }
 
@@ -74,12 +81,6 @@ a:hover{
 	font-weight: bold;
 }
 
-img{
-	width: 300px;
-	height: 300px;
-	border-radius: 50%;
-}
-
 article{
 	margin: 0px 100px;
 }
@@ -88,6 +89,60 @@ footer{
 	text-align: center;
 	padding: 20px 0px;
 }
+
+/*Flip Card*/
+div.flip-card{
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+}
+
+.flip-card-inner{
+	width: 100%;
+	height: 100%;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	border-radius: 50%;
+}
+
+.flip-card:hover .flip-card-inner{
+	transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: 50%;
+}
+
+.flip-card-front{
+	background-image: url("foto_profile1.jpeg");
+	background-size: cover;
+}
+
+.flip-card-back{
+	background-image: url("foto_profile1.jpeg");
+	background-size: cover;
+	transform: rotateY(180deg);
+}
+
+.flip-card-back ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.flip-card-back ul li{
+	font-family: 'Combo', cursive;
+	font-size: 25px;
+}
+
 
 @media(max-width: 1040px){
 	div.content article h1{
@@ -105,12 +160,11 @@ footer{
 	main{
 		flex-direction: column;
 		margin-top: 30px;
-		margin-right: 20px;
+		margin-left: 30px;
 	}
 
 	aside, div.content{
 		margin-bottom: 50px;
-		/*margin-right: 30px;*/
 	}
 
 	article.about{
@@ -118,6 +172,5 @@ footer{
 	}
 }
 
-@media(max-width: 680px){
-
+@media(max-width: 660){
 }
