@@ -73,6 +73,10 @@ function selectedNav(value){
 			createElementAFacebook.setAttribute('target', '_blank');
 			createElementAInstagram.setAttribute('target', '_blank');
 
+			//membuat attribute alt kedalam tag img
+			createElementImgFacebook.setAttribute('alt', 'My Account Facebook');
+			createElementImgInstagram.setAttribute('alt', 'My Account Instagram');
+
 			judul.innerHTML = data.contacts.h1;
 			paragraf.innerHTML = '';
 			paragraf.appendChild(createElementFigure);

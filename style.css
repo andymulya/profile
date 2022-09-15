@@ -17,6 +17,7 @@ body {
     color: white;
     justify-content: space-between;
     font-family: 'Kanit', sans-serif;
+    min-width: 470px;
 }
 
 /*Lingkaran*/
@@ -65,11 +66,13 @@ div.content article h1{
 	font-family: 'Oswald', sans-serif;
 	font-size: 40px;
 	margin-bottom: 30px;
+	padding-right: 20px;
 	animation: anim-content 1s;
 }
 
 div.content article p{
 	animation: anim-content 2s;
+	padding-right: 100px;
 }
 
 
@@ -131,7 +134,7 @@ div.flip-card{
 	height: 300px;
 	border-radius: 50%;
 	filter: opacity(0%);
-	animation: anim-aside ease-out 1s 1.5s forwards;
+	animation: anim-aside ease-out 1s 1.3s forwards;
 }
 
 .flip-card-inner{
