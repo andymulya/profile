@@ -11,10 +11,10 @@ html {
 body {
 	display: flex;
     height: 100%;
-    background-image: linear-gradient(to bottom right, rgb(88, 0, 255)30%, rgb(0, 150, 255)70%);
+    background-image: linear-gradient(to bottom right, rgb(146, 169, 189)30%, rgb(211, 222, 220)70%);
     box-sizing: border-box;
     flex-direction: column;
-    color: white;
+    color: black;
     justify-content: space-between;
     font-family: 'Kanit', sans-serif;
     min-width: 470px;
@@ -26,7 +26,7 @@ body {
 	height: 500px;
 	width: 500px;
 	position: absolute;
-	background-color: rgba(114, 255, 255, 0.5);
+	background-color: rgba(124, 153, 172, 0.9);
 	transform: translate(-30%, -30%);
 	z-index: 1;
 }
@@ -41,6 +41,11 @@ main{
 	padding-right: 70px;
 	text-align: center;
 	overflow-y: hidden;
+}
+
+header{
+	border-bottom: 1px solid black;
+	background-color: rgb(124, 153, 172);
 }
 
 aside{
@@ -93,7 +98,7 @@ li{
 }
 
 span{
-	color: white;
+	color: black;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -102,7 +107,7 @@ span{
 }
 
 span:hover{
-	border: 2px solid white;
+	border: 2px solid black;
 	border-radius: 40px;
 	padding: 10px;
 	font-weight: bold;
@@ -135,6 +140,7 @@ div.flip-card{
 	border-radius: 50%;
 	filter: opacity(0%);
 	animation: anim-aside ease-out 1s 1.3s forwards;
+	color: white;
 }
 
 .flip-card-inner{
@@ -159,12 +165,12 @@ div.flip-card{
 }
 
 .flip-card-front{
-	background-image: url("foto_profile1.jpeg");
+	background-image: url("foto_profile.jpeg");
 	background-size: cover;
 }
 
 .flip-card-back{
-	background-image: url("foto_profile1.jpeg");
+	background-image: url("foto_profile.jpeg");
 	background-size: cover;
 	transform: rotateY(180deg);
 }
@@ -213,7 +219,10 @@ div.flip-card{
 }
 
 @media(max-width: 500px){
-
+	div.flip-card{
+		width: 250px;
+		height: 250px;
+	}
 }
 
 /*Animasi untuk aside*/

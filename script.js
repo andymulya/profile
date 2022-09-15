@@ -22,6 +22,8 @@ for(const span of resultNav){
 	selectedNav(span);
 }
 
+
+
 // Fungsi Untuk mengupdate konten ketika menekan tombol di salah satu navigasi
 function selectedNav(value){
 	const judul = document.querySelector('.content article h1');
@@ -38,48 +40,14 @@ function selectedNav(value){
 			paragraf.innerHTML = data.about.p;
 		}else if(value.innerHTML == "contacts"){
 
-			//membuat tag elemen figure
-			const createElementFigure = document.createElement('figure');
-
-			//membuat tag elemen a untuk instagram dan facebook
-			const createElementAFacebook = document.createElement('a');
-			const createElementAInstagram = document.createElement('a');
-
-			//membuat tag elemen img untuk facebook dan instagram
-			const createElementImgFacebook = document.createElement('img');
-			const createElementImgInstagram = document.createElement('img');
-
-			// menambahkan tag a kedalam tag figure
-			createElementFigure.appendChild(createElementAFacebook);
-			createElementFigure.appendChild(createElementAInstagram);
-
-			// menambahkan tag img kedalam tag a
-			createElementAFacebook.appendChild(createElementImgFacebook);
-			createElementAInstagram.appendChild(createElementImgInstagram);
-
-			// membuat attribute href kedalam tag a
-			createElementAFacebook.setAttribute('href', 'https://web.facebook.com/grd.pendopo');
-			createElementAInstagram.setAttribute('href', 'https://www.instagram.com/andy.mulyaa/');
-
-			//membuat attribute src kedalam tag img
-			createElementImgFacebook.setAttribute('src', data.contacts.facebook);
-			createElementImgInstagram.setAttribute('src', data.contacts.instagram);
-
-			//membuat attribute class kedalam tag img
-			createElementImgFacebook.setAttribute('class', 'icon');
-			createElementImgInstagram.setAttribute('class', 'icon');
-
-			//membuat attribute class kedalam tag img
-			createElementAFacebook.setAttribute('target', '_blank');
-			createElementAInstagram.setAttribute('target', '_blank');
-
-			//membuat attribute alt kedalam tag img
-			createElementImgFacebook.setAttribute('alt', 'My Account Facebook');
-			createElementImgInstagram.setAttribute('alt', 'My Account Instagram');
-
 			judul.innerHTML = data.contacts.h1;
-			paragraf.innerHTML = '';
-			paragraf.appendChild(createElementFigure);
+			paragraf.innerHTML = 
+			`
+				<figure>
+					<a><img class='icon'  src='${data.contacts.facebook}'></a>
+					<a><img class='icon'  src='${data.contacts.instagram}'></a>
+				</figure>
+			`;
 
 		}
 	});
