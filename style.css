@@ -6,7 +6,6 @@
 html {
     height: 100%;
     background-color: cyan;
-    overflow-x: hidden;
 }
 
 body {
@@ -20,11 +19,27 @@ body {
     font-family: 'Kanit', sans-serif;
 }
 
+/*Lingkaran*/
+.lingkaran{
+	border-radius: 50%;
+	height: 500px;
+	width: 500px;
+	position: absolute;
+	background-color: rgba(114, 255, 255, 0.5);
+	transform: translate(-30%, -30%);
+	z-index: 1;
+}
+
+header, main, footer{
+	z-index: 2;
+}
+
 main{
 	display: flex;
 	flex-direction: row-reverse;
 	padding-right: 70px;
 	text-align: center;
+	overflow-y: hidden;
 }
 
 aside{
@@ -46,10 +61,16 @@ div.content article{
 }
 
 div.content article h1{
-	font-family: 'Combo', cursive;
-	font-size: 35px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 40px;
 	margin-bottom: 30px;
+	animation: anim-content 1s;
 }
+
+div.content article p{
+	animation: anim-content 2s;
+}
+
 
 nav{
 	padding: 20px;
@@ -67,14 +88,16 @@ li{
 	list-style: none;
 }
 
-a{
+span{
 	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 14px;
+	transition: 0.5s;
+	cursor: pointer;
 }
 
-a:hover{
+span:hover{
 	border: 2px solid white;
 	border-radius: 40px;
 	padding: 10px;
@@ -95,6 +118,8 @@ div.flip-card{
 	width: 300px;
 	height: 300px;
 	border-radius: 50%;
+	filter: opacity(0%);
+	animation: anim-aside ease-out 1s 1.5s forwards;
 }
 
 .flip-card-inner{
@@ -172,5 +197,27 @@ div.flip-card{
 	}
 }
 
-@media(max-width: 660){
+@media(max-width: 650){
+}
+
+/*Animasi untuk aside*/
+
+@keyframes anim-aside{
+	from{
+		transform: translateX(500px);
+		filter: opacity(0%);
+	}to{
+		transform: translateX(0px);
+		filter: opacity(100%);
+	}
+}
+
+/*Animasi untuk content*/
+
+@keyframes anim-content{
+	from{
+		transform: translateY(300px);
+	}to{
+		transform: translateY(0px);
+	}
 }
