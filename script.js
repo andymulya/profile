@@ -29,7 +29,7 @@ function selectedNav(value){
 	const judul = document.querySelector('.content article h1');
 	const paragraf = document.querySelector('.content article p');
 
-	value.addEventListener("click",function(){
+	value.addEventListener("click",function(e){
 		if(value.innerHTML == "home"){
 			
 			judul.innerHTML = data.home.h1;
